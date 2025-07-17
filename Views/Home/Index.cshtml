@@ -3,6 +3,11 @@
 }
 
 <div>
-    <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+    <h1>Bienvenido al sitio web de presentacion grupal</h1>
+    <p>Login a su cuenta: </p>
+    <form action='@Url.Action("Login", "Home" )' method="POST">
+        <input type = "text" name="email">
+        <input type = "text" name="contraseña">
+        <input type = "submit" value = "Login">
+    </form>
 </div>

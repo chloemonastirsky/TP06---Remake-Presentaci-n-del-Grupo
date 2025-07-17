@@ -9,12 +9,11 @@ public static class BD{
     public static int Login(string email, string contraseña){
         int encontrado=0;
         using(SqlConnection connection = new SqlConnection(conexion)){
-            string query = "select Contraseña from Usuario where email="+email;
-            encontrado= connection.QueryFirstOrDefault<int>(query, new {pContraseña=contraseña});
-
+            string query = "select Usuario.Id from Usuario where email=@pemail and contraseña = @pcontraseña";
+            encontrado= connection.QueryFirstOrDefault<int>(query, new {pemail = email, pcontraseña = contraseña});
         }
 
-        if(encontrado==null){
+        if(encontrado==0){
             encontrado=-1;
         }
 
@@ -25,7 +24,7 @@ public static class BD{
         Usuario usuarioMostrar=null;
 
         using(SqlConnection connection = new SqlConnection(conexion)){
-            string query = "select Usuario.Id, Usuario.Nombre, Usuario.Apellido, Usuario.Email, Usuario.Contraseña, Usuario.FechaNacimiento, Usuario.Foto from Usuario where id="+ id;
+            string query = "select Usuario.Id, Usuario.Nombre, Usuario.Apellido, Usuario.Email, Usuario.Contraseña, Usuario.FechaNacimiento, Usuario.Foto from Usuario where id=@pId";
             usuarioMostrar= connection.QueryFirstOrDefault<Usuario>(query, new {pid=id});
         }
 
@@ -37,7 +36,7 @@ public static class BD{
 
         List<DatoFamiliar> LDatosFliares=null;
         using(SqlConnection connection = new SqlConnection(conexion)){
-            string query = "select DatoFamiliar.IdUsuario, DatoFamiliar.Nombre, DatoFamiliar.Apellido, DatoFamiliar.Parentesco, DatoFamiliar.Descripcion from DatoFamiliar where id="+ id;
+            string query = "select DatoFamiliar.IdUsuario, DatoFamiliar.Nombre, DatoFamiliar.Apellido, DatoFamiliar.Parentesco, DatoFamiliar.Descripcion from DatoFamiliar where id=@pid";
             LDatosFliares= connection.Query<DatoFamiliar>(query).ToList();
         }
 
@@ -49,7 +48,7 @@ public static class BD{
         
         List<DatoInteres> LDatoInteres=null;
         using(SqlConnection connection = new SqlConnection(conexion)){
-            string query = "select  DatoInteres.Id, DatoInteres.IdUsuario, DatoInteres.TipoInteres, DatoInteres.Interes from DatoInteres where id="+ id;
+            string query = "select  DatoInteres.Id, DatoInteres.IdUsuario, DatoInteres.TipoInteres, DatoInteres.Interes from DatoInteres where id=@pid";
             LDatoInteres= connection.Query<DatoInteres>(query).ToList();
         }
 

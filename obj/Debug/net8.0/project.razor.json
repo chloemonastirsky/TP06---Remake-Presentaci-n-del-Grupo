@@ -19349,8 +19349,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "z:\\INFO 2025\\PROG\\TP06 PROG\\TP06\\Views\\Home\\PaginaPrincipal.cshtml",
+      "TargetPath": "Views\\Home\\PaginaPrincipal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "z:\\INFO 2025\\PROG\\TP06 PROG\\TP06\\Views\\Home\\DatoUsuario.cshtml",
+      "TargetPath": "Views\\Home\\DatoUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "z:\\INFO 2025\\PROG\\TP06 PROG\\TP06\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "z:\\INFO 2025\\PROG\\TP06 PROG\\TP06\\Views\\Home\\DatoFamiliar.cshtml",
+      "TargetPath": "Views\\Home\\DatoFamiliar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "z:\\INFO 2025\\PROG\\TP06 PROG\\TP06\\Views\\Home\\DatoInteres.cshtml",
+      "TargetPath": "Views\\Home\\DatoInteres.cshtml",
       "FileKind": "mvc"
     }
   ],
