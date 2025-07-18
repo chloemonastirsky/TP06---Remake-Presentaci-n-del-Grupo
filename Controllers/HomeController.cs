@@ -50,7 +50,8 @@ public class HomeController : Controller
     {
         string idUsuario= HttpContext.Session.GetString("IDUsuario");
         int idUser=int.Parse(idUsuario);
-        ViewBag.InfoFamilia=BD.GetDatoFamiliar(idUser);
+        List<DatoFamiliar>lDatoFamilia=BD.GetDatoFamiliar(idUser);
+        ViewBag.InfoFamilia=lDatoFamilia;
         return View("DatoFamiliar");
     }
 
@@ -58,10 +59,10 @@ public class HomeController : Controller
     {
         string idUsuario= HttpContext.Session.GetString("IDUsuario");
         int idUser=int.Parse(idUsuario);
-        ViewBag.InfoIntereses=BD.GetDatoInteres(idUser);
+        List<DatoInteres>lDatoInteres=BD.GetDatoInteres(idUser);
+        ViewBag.InfoInteres=lDatoInteres;
         return View("DatoInteres");
     }
-
     
 
 
